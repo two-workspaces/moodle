@@ -6,7 +6,7 @@
   },
   "services": {
     "6c924e0b-7591-4e99-b6ee-cb92d2161c67": {
-      "icon": "https://devicons.railway.com/i/moodle.svg",
+      "icon": "https://beekee.ch/images/icons/moodle.webp",
       "name": "Moodle",
       "build": {
         "dockerfilePath": "Dockerfile"
