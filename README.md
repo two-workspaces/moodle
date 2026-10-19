@@ -29,7 +29,7 @@ Moodle is installed from the command line on first boot, with an admin password 
 
 - [Moodle documentation](https://docs.moodle.org/502/en/Main_page)
 - [Moodle plugins directory](https://moodle.org/plugins/)
-- [Template source on GitHub](https://github.com/nomideusz/moodle-railway)
+- [Template source on GitHub](https://github.com/two-workspaces/moodle)
 
 ### Implementation Details
 
@@ -39,7 +39,7 @@ Moodle is installed from the command line on first boot, with an admin password 
 
 **Custom domain.** Add it in the service's Networking settings, then set `MOODLE_URL` to `https://your.domain`. Links already stored in course content still point to the old address; the "Search and replace" tool under Site administration → Development fixes those.
 
-**Plugins.** The code is part of the image, so plugins are added there too and survive every redeploy. Fork the [template repository](https://github.com/nomideusz/moodle-railway), put each plugin under `plugins/` at the path Moodle expects (for example `plugins/mod/attendance`), point the service at your fork and redeploy. The next start installs the plugin. Installing plugins from the admin page is turned off because the image is read-only.
+**Plugins.** The code is part of the image, so plugins are added there too and survive every redeploy. Fork the [template repository](https://github.com/two-workspaces/moodle), put each plugin under `plugins/` at the path Moodle expects (for example `plugins/mod/attendance`), point the service at your fork and redeploy. The next start installs the plugin. Installing plugins from the admin page is turned off because the image is read-only.
 
 **Updates.** Bump `MOODLE_VERSION` and its checksum in the `Dockerfile` and redeploy. The start script runs Moodle's command-line upgrade before serving the new release, and visitors see the "starting" page while it runs. Take a backup first (below).
 
